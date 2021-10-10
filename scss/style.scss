@@ -1,0 +1,30 @@
+//var
+
+//import
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+//all
+* {
+	padding: 0;
+	margin : 0;
+	box-sizing: border-box;
+}
+
+h1, h2, h3 {
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+//id
+
+//class
+.Wrapper{
+	width: 100%;
+}
+
+.WrapperHeader{
+	width: 60%;
+	margin: auto;
+	text-align: center;
+}

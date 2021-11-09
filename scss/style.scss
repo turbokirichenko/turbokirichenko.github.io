@@ -6,36 +6,40 @@
 
 //ALL
 *{
+	background-color: #f8f8f8;
+}
+
+//spezial
+#_body {
+	position: static;
+}
+
+#_site {
 
 }
 
-//BASE CLASSES
-//Site - main object
-
+//Base class
 .Site {
-
-	//Page dependies module
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
 	.Page {
+		.Composition {
+
+		}
+	}
+}
+
+//internal composition class
+.Composition {
+	.Animal {
+
+	}
+
+	.Picture {
 
 	}
 }
 
-//ActiveSpace
-.ActiveSpace{
-
-}
-
-//StaticSpace
-.StaticSpace{
-
-}
-
-//BASE ID
 //
-#_body{
-		#_site{
-
-	}
-}
-
 

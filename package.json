@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev":"browser-sync start --server --files 'index.html, css/*, js/*'",
-    "scss-css":"sass-lighter burn scss/style.scss css/style.css"
+    "scss-burn":"sass-lighter burn scss/style.scss css/style.css",
+    "scss-stop":"sass-lighter stop"
   },
   "repository": {
     "type": "git",

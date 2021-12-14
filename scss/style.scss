@@ -11,6 +11,9 @@
 	padding: 0;
 }
 
+html {
+	overflow: hidden;
+}
 //spezial
 #_body {
 	overflow: hidden;
@@ -30,7 +33,7 @@
 		width: 60%;
 		height: 100px;
 		left: 50%;
-		top: 250px;
+		top: 40%;
 		transform: translate(-50%, -50%);
 		text-align: center;
 
@@ -47,7 +50,7 @@
 		width: 36px;
 		height: 36px;
 		left: 50%;
-		top: 320px;
+		top: 50%;
 		transform: translate(-50%, -50%);
 		#_point {
 			width: 100%;
@@ -64,7 +67,7 @@
 		width: 500px;
 		height: 500px;
 		left: 50%;
-		top: 320px;
+		top: 50%;
 		transform: translate(-50%, -50%);
 		#_space_system_content {
 			#_planet_1{
@@ -99,10 +102,10 @@
 
 	#_linksquare_block {
 		opacity: 0;
-		width: 400px;
-		height: 400px;
+		width: 500px;
+		height: 500px;
 		left: 50%;
-		top: 320px;
+		top: 50%;
 		transform: translate(-50%, -50%);
 		#_linksquare_content {
 			width: 100%;
@@ -116,6 +119,9 @@
 				font-size: 14px;
 				text-align: center;
 				border-radius: 3px;
+				font-family: monospace;
+				padding-top: 10px;
+				font-size: 24px;
 			}
 
 			.HiddenBlock {
@@ -209,7 +215,7 @@
 	#_image_background {
 		background-color: #010119;
 		position: absolute;
-		top: 320px;
+		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 10px;
@@ -253,6 +259,7 @@
 				width: 120px;
 				height: 40px;
 				#_back_button {
+					font-family: sans-serif;
 					width: 100%;
 					height: 100%;
 					color: #FF4500;
@@ -309,7 +316,6 @@
 				height: 35px;
 				border-radius: 10px;
 				padding: 5px;
-				border: 2px solid #FF4500;
 				overflow: hidden;
 			}
 		}
@@ -421,5 +427,193 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+	}
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 899px) {
+	#_first_page {
+			#_title_block {
+			width: 90%;
+			height: 100px;
+
+			article > h1{
+				font-size: 24px;
+			}
+		}
+
+		#_linksquare_block {
+			width: 400px !important;
+			height: 400px !important;
+
+			#_linksquare_content {
+				width: 100%;
+				height: 100%;
+				gap: 30px;
+			}
+
+		}
+	}
+}
+
+@media (max-width: 699px) {
+	#_first_page {
+			#_title_block {
+			width: 90%;
+			height: 100px;
+			article > h1{
+				font-size: 20px;
+			}
+		}
+
+		#_linksquare_block {
+			width: 330px !important;
+			height: 330px !important;
+
+			#_linksquare_content {
+				gap: 20px;
+			}
+
+			#_square_9 {
+				font-size: 20px;
+			}
+
+		}
+	}
+
+	#_second_page {
+		#_greeting_zone {
+			height: 300px;
+			.Content {
+				padding: 30px 10px 10px 10px;
+				#_title_portfolio {
+					margin: 10px;
+				}
+				#_text_portfolio {
+					.InternalText {
+						width: 100%;
+						font-size: 16px;
+					}
+				}
+				#_button_container {
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					width: 90px;
+					height: 30px;
+					#_back_button {
+						width: 100%;
+						height: 100%;
+						color: #FF4500;
+						padding: 1px;
+						border: 3px solid #FF4500;
+						border-radius: 10px;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		#_projects_zone {
+			top: 340px;
+			.Content {
+				grid-template-columns: 1fr !important;
+			}
+			.Project {
+				h3{
+					font-size: 22px;
+				}
+				.ProjectsText {
+					font-size: 18px;
+				}
+
+				.ProjectsGitLink {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+}
+
+@media (max-width: 399px) {
+	#_first_page {
+		#_title_block {
+			width: 100%;
+			article > h1{
+				font-size: 20px;
+			}
+		}
+		#_linksquare_block {
+			width: 260px !important;
+			height: 260px !important;
+
+			#_linksquare_content {
+				gap: 10px;
+			}
+
+			#_square_9 {
+				font-size: 18px;
+			}
+		}
+	}
+
+	#_second_page {
+		#_greeting_zone {
+			height: 340px;
+			.Content {
+				padding: 30px 5px 5px 5px;
+				#_title_portfolio {
+					margin: 10px;
+				}
+				#_text_portfolio {
+					width: 100%;
+					.InternalText {
+						width: 100%;
+						font-size: 16px;
+					}
+				}
+				#_button_container {
+					position: absolute;
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					width: 40px;
+					height: 40px;
+					#_back_button {
+						width: 100%;
+						height: 100%;
+						color: white;
+						padding-top: 6px;
+						border: 3px solid #FF4500;
+						border-radius: 50%;
+						font-size: 16px;
+						background-color: #FF4500;
+					}
+				}
+			}
+		}
+
+		#_projects_zone {
+			top: 380px;
+			.Content {
+				grid-template-columns: 1fr !important;
+			}
+			.Project {
+				h3{
+					font-size: 20px;
+				}
+				.ProjectsText {
+					font-size: 16px;
+				}
+
+				.ProjectsGitLink {
+					font-size: 16px;
+				}
+			}
+		}
 	}
 }

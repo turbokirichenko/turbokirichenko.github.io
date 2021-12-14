@@ -65,8 +65,9 @@ function CompressUniverse () {
 		working = true;
 		var counter = 0;
 		var interval = 30;
-		var curWidth = window.innerWidth / 2;
-		var curHeight = window.innerHeight - 320;
+		var curWidth = window.innerWidth / 2 + 100;
+		var curHeight = window.innerHeight / 2 + 100;
+		var planetBox = window.innerWidth > 400 ? 500 : 300;
 		var timerId = setInterval(function() {
 
 			//increase counter
@@ -80,8 +81,8 @@ function CompressUniverse () {
 			if(opacity < 0.5) grids.opacity = 1 - (opacity)*2;
 
 			//change dimention
-			var localWidth = 1.0*500*(100-counter)/100.;
-			var localHeight = 1.0*500*(100-counter)/100.;
+			var localWidth = 1.0*planetBox*(100-counter)/100.;
+			var localHeight = 1.0*planetBox*(100-counter)/100.;
 
 			planet_system.width = localWidth + 'px';
 			planet_system.height = localHeight + 'px';
@@ -117,8 +118,9 @@ function IncreaseUniverse () {
 		working = true;
 		var counter = 0;
 		var interval = 30;
-		var curWidth = window.innerWidth / 2;
-		var curHeight = window.innerHeight - 320;
+		var curWidth = window.innerWidth / 2 + 100;
+		var curHeight = window.innerHeight / 2 + 100;
+		var planetBox = window.innerWidth > 400 ? 500 : 300;
 		var timerId = setInterval(function() {
 			counter += 3;
 
@@ -128,8 +130,8 @@ function IncreaseUniverse () {
 			title.opacity = 1 - opacity;
 			if(opacity > 0.5) grids.opacity = (opacity-0.5)*2;
 
-			var localWidth = 500*(counter)/100.;
-			var localHeight = 500*(counter)/100.;
+			var localWidth = planetBox*(counter)/100.;
+			var localHeight = planetBox*(counter)/100.;
 
 			planet_system.width = localWidth + 'px';
 			planet_system.height = localHeight + 'px';
@@ -157,6 +159,7 @@ function IncreaseUniverse () {
 		}, interval);
 	})
 }
+
 
 
 function LoadTextMessage(text){

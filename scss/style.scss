@@ -120,8 +120,11 @@ html {
 				text-align: center;
 				border-radius: 3px;
 				font-family: monospace;
-				padding-top: 10px;
 				font-size: 24px;
+				a:link, a:visited {
+					padding-top: 25%;
+					text-decoration: none;
+				}
 			}
 
 			.HiddenBlock {
@@ -135,14 +138,31 @@ html {
 			}
 
 			#_square_1 {
+				background: #0077dd;
+				a:-webkit-any-link{
+					color: white !important;
+				}
 			}
 
 			#_square_2 {
-
+				
+				a:-webkit-any-link{
+					color: #0088cc !important;
+				}
 			}
 
 			#_square_3 {
-
+				background: linear-gradient(#8134AF, #DD2A7B, #FEDA77);
+				.t {
+					font-family: monospace;
+					padding: 0;
+					margin: 0;
+					color: white;
+				}
+				
+				a:-webkit-any-link{
+					color: #0088cc !important;
+				}
 			}
 
 			#_square_4 {
@@ -179,15 +199,25 @@ html {
 			}
 
 			#_square_7 {
-
+				background: #2dba4e;
+				color: white !important;
+				a:-webkit-any-link{
+					color: white !important;
+				}
 			}
 
 			#_square_8 {
-
+				background: white;
+				color: #0077dd!important;
+				a:-webkit-any-link{
+					color: #0077dd!important;
+				}
 			}
 
 			#_square_9 {
-
+				padding-top: 15%;
+				background: orange;
+				color: black!important;
 			}
 		}
 	}
@@ -453,6 +483,10 @@ html {
 				width: 100%;
 				height: 100%;
 				gap: 30px;
+
+				.SquareBlock {
+					font-size: 20px;
+				}
 			}
 
 		}
@@ -557,6 +591,20 @@ html {
 
 			#_square_9 {
 				font-size: 18px;
+			}
+		}
+
+		#_interactive_zone {
+			height: 40px;
+			#_output_content {
+				padding: 8px 10px;
+				#_output_message {
+					white-space: nowrap;
+					span {
+						font-size: 14px !important;
+						color: #F1F1F9;
+					}
+				}
 			}
 		}
 	}

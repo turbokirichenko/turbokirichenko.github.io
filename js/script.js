@@ -50,11 +50,13 @@ var p = O('_point');
 var linkopen = O('_square_4');
 var changepage = O('_square_6');
 var back = O('_button_container');
+var square_9 = O('_square_9');
 
 p.onclick = ChangeState;
 linkopen.onclick = OpenEyes;
 changepage.onclick = ChangePage;
 back.onclick = ChangePage;
+square_9.onclick = BtcAddress;
 
 
 
@@ -223,7 +225,7 @@ function ChangeState(event) {
 
 	if(currentState == 0) {
 		IncreaseUniverse().then((res)=>{
-			LoadTextMessage("wtf?");
+			LoadTextMessage("Just my metaverse");
 			if (res) currentState = 1;
 		});
 		return;
@@ -236,6 +238,11 @@ function ChangeState(event) {
 		});
 		return;
 	}
+}
+
+function BtcAddress(event) {
+
+	LoadTextMessage("mvwWrWtiToK6RJ1iyQh1EgQpWgJwV2NgVv");
 }
 
 
@@ -275,6 +282,7 @@ function LoadHiddenLinks(){
 
 function OpenEyes() {
 	LoadHiddenLinks().then(function (res) {
+		LoadTextMessage("Contacts");
 		if(res) {
 		}
 	})

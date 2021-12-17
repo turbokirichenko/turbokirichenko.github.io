@@ -43,6 +43,7 @@ var planetsHeight = planet_system.height;
 
 var title = S('_title_block');
 var grids = S('_linksquare_block');
+grids.display = 'none';
 var background = S('_image_background');
 
 
@@ -221,6 +222,7 @@ function LoadStateOne() {
 function ChangeState(event) {
 
 	if(currentState == 0) {
+		grids.display='block';
 		IncreaseUniverse().then((res)=>{
 			LoadTextMessage("Just my metaverse");
 			if (res) currentState = 1;
@@ -230,6 +232,7 @@ function ChangeState(event) {
 
 	if(currentState == 1) {
 		CompressUniverse().then((res)=>{
+			grids.display='none';
 			LoadTextMessage("Bye Bye! See you later!");
 			if (res) currentState = 0;
 		});

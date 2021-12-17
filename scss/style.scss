@@ -3,10 +3,23 @@
 //mixin
 
 //import
+@font-face {
+	font-family: "RedactedRegular";
+	src: url("../fonts/Redacted/RedactedScript-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Patrick";
+	src: url("../fonts/Patrick_Hand/PatrickHand-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
 
 //ALL
 *{
-	font-family: cursive;
+	font-family: "Patrick";
 	margin: 0;
 	padding: 0;
 }
@@ -124,6 +137,7 @@ html {
 				a:link, a:visited {
 					padding-top: 25%;
 					text-decoration: none;
+					font-family: monospace;
 				}
 			}
 
@@ -140,12 +154,13 @@ html {
 			#_square_1 {
 				background: #0077dd;
 				a:-webkit-any-link{
+					font-family: monospace;
 					color: white !important;
 				}
 			}
 
 			#_square_2 {
-				
+				font-family: monospace;
 				a:-webkit-any-link{
 					color: #0088cc !important;
 				}
@@ -199,6 +214,7 @@ html {
 			}
 
 			#_square_7 {
+				font-family: monospace;
 				background: #2dba4e;
 				color: white !important;
 				a:-webkit-any-link{
@@ -207,6 +223,7 @@ html {
 			}
 
 			#_square_8 {
+				font-family: monospace;
 				background: white;
 				color: #0077dd!important;
 				a:-webkit-any-link{
@@ -215,6 +232,7 @@ html {
 			}
 
 			#_square_9 {
+				font-family: monospace;
 				padding-top: 15%;
 				background: orange;
 				color: black!important;
@@ -233,7 +251,7 @@ html {
 
 			#_output_message {
 				white-space: nowrap;
-
+				font-family: monospace;
 				span {
 					color: #F1F1F9;
 				}
@@ -278,7 +296,8 @@ html {
 				width: 80%;
 				.InternalText {
 					color:#616170;
-					font-size: 16px;
+					font-family:"RedactedRegular";
+					font-size: 20px;
 				}
 			}
 

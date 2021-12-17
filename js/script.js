@@ -57,10 +57,7 @@ linkopen.onclick = OpenEyes;
 changepage.onclick = ChangePage;
 back.onclick = ChangePage;
 square_9.onclick = BtcAddress;
-
-
-
-LoadTextMessage("Hello, Buddy!");
+LoadTextMessage("yep");
 function CompressUniverse () {
 	if(working){ return new Promise((resolve)=>{resolve(false)}) }
 	return new Promise((resolve, reject) => {

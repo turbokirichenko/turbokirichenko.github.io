@@ -146,7 +146,7 @@ html {
 			}
 
 			.InternalLink {
-				display: block;
+				display: none;
 				width: 100%;
 				height: 100%;
 			}
@@ -217,6 +217,7 @@ html {
 				font-family: monospace;
 				background: #2dba4e;
 				color: white !important;
+				
 				a:-webkit-any-link{
 					color: white !important;
 				}
@@ -226,6 +227,7 @@ html {
 				font-family: monospace;
 				background: white;
 				color: #0077dd!important;
+				
 				a:-webkit-any-link{
 					color: #0077dd!important;
 				}
@@ -233,9 +235,11 @@ html {
 
 			#_square_9 {
 				font-family: monospace;
-				padding-top: 15%;
 				background: orange;
 				color: black!important;
+				a:-webkit-any-link{
+					color: black !important;
+				}
 			}
 		}
 	}
@@ -530,8 +534,10 @@ html {
 				gap: 20px;
 			}
 
+			#_square_7, 
+			#_square_8, 
 			#_square_9 {
-				font-size: 14px;
+				font-size: 16px !important;
 			}
 
 		}
@@ -609,7 +615,7 @@ html {
 			}
 
 			#_square_9 {
-				font-size: 14px;
+				font-size: 14px !important;
 			}
 		}
 

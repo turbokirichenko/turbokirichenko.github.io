@@ -1,5 +1,3 @@
-
-
 function O(i){
 	return typeof i == 'object' ? i : document.getElementById(i)
 }
@@ -22,7 +20,6 @@ var site = S('_site');
 
 var currentWindowWidth = window.innerWidth + 'px';
 var currentWindowHeight = window.innerHeight + 'px';
-
 
 site.height = currentWindowHeight;
 
@@ -58,7 +55,7 @@ linkopen.onclick = OpenEyes;
 changepage.onclick = ChangePage;
 back.onclick = ChangePage;
 square_9.onclick = BtcAddress;
-LoadTextMessage("yep! fonts:'Patrick Hand','Redacted Script'");
+LoadTextMessage("Yep!");
 function CompressUniverse () {
 	if(working){ return new Promise((resolve)=>{resolve(false)}) }
 	return new Promise((resolve, reject) => {
@@ -254,12 +251,16 @@ function LoadHiddenLinks(){
 			working = true;
 			var image = O('_guy_image');
 			var counter = 0;
-			var links = document.getElementsByClassName('HiddenBlock');;
-			timerId = setInterval(function () {
-				counter+=2;
-				image.src = (more == 0)
+			var links = document.getElementsByClassName('HiddenBlock');
+			var anch = document.getElementsByClassName('InternalLink');
+			if(more == 0) Array.from(anch).forEach(function (element) {
+				element.style.display = 'block';
+			});
+			image.src = (more == 0)
 					? './svg/icons/humanopen.svg'
 					: './svg/icons/humanclose.svg';
+			timerId = setInterval(function () {
+				counter+=2;
 				var localOpacity = (more == 0)
 					? counter/100.
 					: 1 - counter/100.
@@ -268,6 +269,9 @@ function LoadHiddenLinks(){
 				});
 
 				if(counter>=100){
+					if(more == 1) Array.from(anch).forEach(function (element) {
+						element.style.display = 'none';
+					});
 					more == 0 ? more = 1 : more = 0;
 					working = false;
 					clearInterval(timerId);
@@ -282,8 +286,8 @@ function LoadHiddenLinks(){
 
 function OpenEyes() {
 	LoadHiddenLinks().then(function (res) {
-		LoadTextMessage("Contacts");
 		if(res) {
+			more == 0? LoadTextMessage("Just my metaverse") : LoadTextMessage("Contacts");
 		}
 	})
 }
@@ -303,5 +307,3 @@ function ChangePage() {
 		currentPage = 0;
 	}
 }
-
-

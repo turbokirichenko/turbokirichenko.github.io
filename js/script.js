@@ -49,13 +49,20 @@ var linkopen = O('_square_4');
 var changepage = O('_square_6');
 var back = O('_button_container');
 var square_9 = O('_square_9');
+var lock_vk = O('_square_1');
+var lock_inst = O('_square_3');
 
 p.onclick = ChangeState;
 linkopen.onclick = OpenEyes;
 changepage.onclick = ChangePage;
 back.onclick = ChangePage;
 square_9.onclick = BtcAddress;
-LoadTextMessage("Yep!");
+
+setTimeout(function () {
+	S('_hint_1').display = 'block';
+}, 1200);
+
+LoadTextMessage("Welcome to my website!");
 function CompressUniverse () {
 	if(working){ return new Promise((resolve)=>{resolve(false)}) }
 	return new Promise((resolve, reject) => {
@@ -219,9 +226,11 @@ function LoadStateOne() {
 function ChangeState(event) {
 
 	if(currentState == 0) {
+		S('_hint_1').display = 'none';
 		grids.display='block';
 		IncreaseUniverse().then((res)=>{
 			LoadTextMessage("Just my metaverse");
+			S('_hint_1').display = 'none';
 			if (res) currentState = 1;
 		});
 		return;
@@ -307,3 +316,92 @@ function ChangePage() {
 		currentPage = 0;
 	}
 }
+
+//crypto 
+
+function Unlocked () {
+	var cipher_1 = 'vk';
+	var cipher_2 = 'in';
+
+	//get params
+	var params = window.location.search.substring(1).split("&");
+	var result = new Map();
+	for(i = 0; i < params.length; i ++) {
+		var val = params[i].split("=");
+		result.set(val[0], val[1]);
+	}
+
+	//check params
+	//if not exist
+	if(!result.get('k')) {
+
+		return 0;
+	}
+
+	console.log('key: ' + result.get('k'));
+}
+
+async function OnceEncrypt () {
+	var key = await window.crypto.subtle.generateKey({
+			name: 'AES-GCM',
+			length: 256,
+		}, true, ['encrypt', 'decrypt']);
+	var iv = new Uint8Array(12); //window.crypto.getRandomValues(new Uint8Array(12));
+	console.log(key);
+	var link_vk = 'https://vk.com/0x0000000a/';
+	var link_inst = 'https://www.instagram.com/ReiiiAnd/';
+	var enc_vk = encode(link_vk);
+	var enc_inst = encode(link_inst);
+	var cipher_vk = await window.crypto.subtle.encrypt({
+		name: 'AES-GCM',
+		iv,
+	}, key, enc_vk);
+	var cipher_inst = await window.crypto.subtle.encrypt({
+		name: 'AES-GCM',
+		iv,
+	}, key, enc_inst);
+	 function toHex(str) {
+	    var result = '';
+	    for (var i=0; i < str.length; i++) {
+	      result += str.charCodeAt(i).toString(16);
+	    }
+	    return result;
+	  }
+	var str = String.fromCharCode.apply(null, new Uint8Array(cipher_vk));
+	var hex = toHex(str);
+	console.log(hex);
+}
+
+function decripts(word, key){
+			var fri = new String("");
+			var Mask = new String(key);
+			var i=0;
+			var j=0;
+			for(i=0;i < word.length; i++)
+					{
+					var c = word.charAt(i);
+					var com = c.charCodeAt(0)^Mask.charCodeAt(j);
+					c = String.fromCharCode(com);
+					fri += c;
+					if(j==Mask.length-1)j=0; else j++;
+					}
+			return fri;
+		}
+ function toHex(str) {
+	    var result = '';
+	    for (var i=0; i < str.length; i++) {
+	      var c = str.charCodeAt(i).toString(16);
+	      result+=c;
+	    }
+	    return result;
+}
+function encode(data) {
+		var encoder = new TextEncoder()
+		return encoder.encode(data)
+	}
+console.log(encode(decripts(('https://vk.com/0x0000000a/'), '1234')));
+
+
+
+//OnceEncrypt();
+//Unlocked();
